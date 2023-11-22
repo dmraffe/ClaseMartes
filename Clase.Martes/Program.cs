@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,7 +53,48 @@ namespace Clase.Martes.OOP
 
             Coordenadas p1 = new Coordenadas();
             Coordenadas p2 = new Coordenadas(5, 3);
-            Console.ReadKey(); 
+            Console.ReadKey();
+            ////////////// SObrecargas de metodos
+            ///
+
+            MetodosSobrecarga metodos = new MetodosSobrecarga("Dixon", "Raffe", "M");
+
+            metodos[0] =   new MetodosSobrecarga("Dixon", "Raffe", "M");
+            Console.WriteLine(metodos[0].MostrarNombreCompleto());
+
+            Console.WriteLine(metodos.MostrarNombreCompleto("Dixon", "Raffe", "M"));
+            Console.WriteLine(metodos.MostrarNombreCompleto());
+
+            //metodos.MostrarArreglo(0, 10);
+         
+            Console.ReadKey();
+            Console.Clear();
+
+            // ejemplo estatico e instancia 
+
+            EjemploEstatico.HolaMundo();
+
+            EjemploEstatico.Saludo = "saludar a la bandera";
+
+            EjemploEstatico.HolaMundo();
+
+            Console.ReadKey();
+            Console.Clear();
+
+            EjemploEstatico ejemploEstatico = EjemploEstatico.CreateObject();
+
+            ejemploEstatico.SaludoInstancia = "Hola mundo";
+
+            ejemploEstatico = EjemploEstatico.CreateObject();
+
+            ejemploEstatico.SaludarInstancia();
+
+
+           
+
+            Console.ReadKey();
+
+            Math.Sqrt(25);
 
         }
 

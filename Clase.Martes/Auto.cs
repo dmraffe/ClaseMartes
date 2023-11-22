@@ -10,7 +10,13 @@ namespace Clase.Martes
     {
         public int velocidad {  get; private  set; }
 
-        public Auto() {
+
+        public Auto(int _velocidad) {
+            velocidad = _velocidad;
+        }
+
+        public Auto()
+        {
             velocidad = 0;
         }
 

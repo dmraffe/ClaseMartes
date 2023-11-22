@@ -49,9 +49,11 @@
     <Compile Include="ClasedePrueba.cs" />
     <Compile Include="Coordenadas.cs" />
     <Compile Include="Ejecutivo.cs" />
+    <Compile Include="EjemploEstatico.cs" />
     <Compile Include="Empleado.cs" />
     <Compile Include="Figura.cs" />
     <Compile Include="MercedesBens.cs" />
+    <Compile Include="MetodosSobrecarga.cs" />
     <Compile Include="Obreros.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

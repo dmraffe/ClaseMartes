@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Protecto.Integrador.Dominio\Protecto.Integrador.Dominio.csproj" />
+  </ItemGroup>
+
 </Project>

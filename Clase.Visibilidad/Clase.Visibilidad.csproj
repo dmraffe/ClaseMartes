@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6213F1C1-4103-40B6-AC99-8DB7A960F33D}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Clase.Martes</RootNamespace>
-    <AssemblyName>Clase.Martes</AssemblyName>
+    <ProjectGuid>{BE0E1ECC-27C6-40B6-A54E-A4DC4A25F57E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Clase.Visibilidad</RootNamespace>
+    <AssemblyName>Clase.Visibilidad</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,31 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administrativo.cs" />
-    <Compile Include="Auto.cs" />
-    <Compile Include="Circulo.cs" />
-    <Compile Include="ClasedePrueba.cs" />
-    <Compile Include="ClasePruebaInternal.cs" />
-    <Compile Include="Coordenadas.cs" />
-    <Compile Include="Ejecutivo.cs" />
-    <Compile Include="EjemploEstatico.cs" />
-    <Compile Include="Empleado.cs" />
-    <Compile Include="Figura.cs" />
-    <Compile Include="MercedesBens.cs" />
-    <Compile Include="MetodosSobrecarga.cs" />
-    <Compile Include="Obreros.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="ClasePadre.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Salario.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Clase.Visibilidad\Clase.Visibilidad.csproj">
-      <Project>{be0e1ecc-27c6-40b6-a54e-a4dc4a25f57e}</Project>
-      <Name>Clase.Visibilidad</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

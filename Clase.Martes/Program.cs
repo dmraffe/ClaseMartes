@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Clase.Visibilidad;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -90,7 +91,18 @@ namespace Clase.Martes.OOP
             ejemploEstatico.SaludarInstancia();
 
 
+
+
+            #region ejemplos de visibilidad
+
+            ClasePruebaInternal pr = new ClasePruebaInternal();
+
            
+            #endregion
+
+
+
+
 
             Console.ReadKey();
 

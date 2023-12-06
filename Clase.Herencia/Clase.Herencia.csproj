@@ -46,6 +46,18 @@
     <Compile Include="Animal.cs" />
     <Compile Include="Circulo.cs" />
     <Compile Include="Cuadrado.cs" />
+    <Compile Include="EjemploAbstractos\A.cs" />
+    <Compile Include="EjemploAbstractos\D.cs" />
+    <Compile Include="EjemploGrafica\Alumno.cs" />
+    <Compile Include="EjemploGrafica\Aula.cs" />
+    <Compile Include="EjemploGrafica\Clase.cs" />
+    <Compile Include="EjemploGrafica\Curso.cs" />
+    <Compile Include="EjemploGrafica\Instructor.cs" />
+    <Compile Include="EjemploGrafica\Materia.cs" />
+    <Compile Include="EjemploGrafica\Persona.cs" />
+    <Compile Include="EjemploInterfaces\IbaseEjemplo.cs" />
+    <Compile Include="EjemploInterfaces\ImplementacionDos.cs" />
+    <Compile Include="EjemploInterfaces\ImplementacionUno.cs" />
     <Compile Include="Figura.cs" />
     <Compile Include="Pepito.cs" />
     <Compile Include="Program.cs" />
@@ -55,5 +67,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Clase.Herencia.EjemploInterfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,6 +12,32 @@ namespace Clase.Herencia
     {
         static void Main(string[] args)
         {
+
+            StaticTests.caminar();
+
+            var Impleuno = new ImplementacionUno();
+            var Impledos = new ImplementacionDos();
+
+            MostrarMensajes(Impleuno);
+            MostrarMensajes(Impledos);
+
+            ClaseSingleton cs =   ClaseSingleton.GetClaseSingleton("asdas");
+
+
+           
+
+            cs = ClaseSingleton.GetClaseSingleton("asdas");
+            cs.Nombre = "Jose";
+            cs = ClaseSingleton.GetClaseSingleton("asdas");
+            cs.Nombre = "Pepe";
+            cs = ClaseSingleton.GetClaseSingleton("asdas");
+
+            cs.Nombre = "Pedro";
+            
+       
+
+            Math.Min(1, 1); 
+
             var Circulo = new Circulo(2);
 
             var Cuadrado = new Cuadrado(4);
@@ -22,7 +50,7 @@ namespace Clase.Herencia
             imprimir(Cuadrado);
             imprimir(Rect);
             imprimir(Pepito);
-             
+
 
             Console.Clear();
             #region Conversiones 
@@ -32,7 +60,7 @@ namespace Clase.Herencia
             long bigNum = num;
 
             Console.WriteLine(bigNum);
-           
+
 
 
 
@@ -50,12 +78,12 @@ namespace Clase.Herencia
             // La clase derivada Jirafa tiene herencia de la clase base Animal. 
             Animal ani = g;
 
-            g = (Jirafa) ani;
+            g = (Jirafa)ani;
 
             int i = 123;
             // Thefollowing line boxes i.
             object o = i;
-            
+
             o = 123;
             i = (int)o; // unboxing 
 
@@ -69,7 +97,7 @@ namespace Clase.Herencia
             object to = t; // implicitboxing
             try
             {
-                string sr =  i.ToString();
+                string sr = i.ToString();
                 int j = (int)to; // attempttounbox
                 System.Console.WriteLine("Unboxing OK.");
             }
@@ -78,27 +106,37 @@ namespace Clase.Herencia
                 System.Console.WriteLine("{0} Error: Incorrectunboxing.",
                 e.Message);
             }
-        
 
 
+                                
 
-        Console.ReadKey();
+            Console.ReadKey();
             #endregion
 
+        }
+
+
+        public static void MostrarMensajes(IbaseEjemplo ibaseEjemplo)
+        {
+
+            ibaseEjemplo.Crear();
+            ibaseEjemplo.Eliminar();
+            ibaseEjemplo.Modificar();
+             
         }
 
         public static void imprimir(Figura fr)
         {
 
 
-              Console.WriteLine(fr.Perimetro());
+            Console.WriteLine(fr.Perimetro());
         }
 
         public static double CalcularPerimetro(Circulo cr)
         {
 
 
-            return cr.ValorLados * 2 * Math.PI ;
+            return cr.ValorLados * 2 * Math.PI;
         }
 
 
@@ -106,7 +144,7 @@ namespace Clase.Herencia
         {
 
 
-            return cr.ValorLados *cr.NumeroDeLados;
+            return cr.ValorLados * cr.NumeroDeLados;
         }
 
         public static double CalcularPerimetro(Rectangulo cr)
@@ -120,7 +158,7 @@ namespace Clase.Herencia
         {
             switch (figura)
             {
-                case "cuadrado": return  valordelados* numerodelados;
+                case "cuadrado": return valordelados * numerodelados;
                 case "circulo": return valordelados * 2 * Math.PI;
                 case "triangulo": return valordelados * numerodelados;
                 default:
@@ -129,5 +167,64 @@ namespace Clase.Herencia
 
             return 0;
         }
+
+
+
+        public class PersonaEjmplo
+        {
+            public string Nombre { get; set; }
+        }
+
+        public class PersonaEjmploSistema
+        {
+            public string Name { get; set; }
+        }
+
+
+        public static class StaticTests
+        {
+
+       
+            public static void caminar()
+            { 
+            
+            }
+
+            public static PersonaEjmploSistema PersonaEjmploSistema(PersonaEjmplo personaEjmplo)
+            {   
+                return new PersonaEjmploSistema { Name = personaEjmplo.Nombre};
+            }
+        }
+
+      
+
+        
     }
+
+
+
+    public class ClaseSingleton
+    { 
+    
+         public static ClaseSingleton claseSingleton {  get; set; }
+        public string Nombre { get; set; }
+
+
+        private ClaseSingleton(string nombre) {
+            Nombre = nombre;
+        
+        }
+        public static ClaseSingleton GetClaseSingleton(string nombre)
+        { 
+               if(claseSingleton == null)
+                claseSingleton = new ClaseSingleton(nombre);
+
+               return claseSingleton;
+        }
+         
+    }
+
+
+   
 }
+ 

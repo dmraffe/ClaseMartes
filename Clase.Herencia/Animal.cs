@@ -6,13 +6,26 @@ using System.Threading.Tasks;
 
 namespace Clase.Herencia
 {
-    public class Animal
+    public abstract class Animal
     {
+
+        public abstract void Caminar(int paso);
+
+        public virtual void Caminar()
+        {
+            Console.WriteLine("caminado");
+        }
     }
 
 
-    public class Jirafa : Animal { 
-    
-    
+    public class Jirafa : Animal
+    {
+        public override void Caminar(int paso)
+        {
+            Console.WriteLine($"caminado {paso}");
+        }
     }
+
+
+    
 }

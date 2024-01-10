@@ -12,7 +12,7 @@ namespace Clase.Martes
 
         public ClasePruebaInternal()
         {
-           base.protectedinternal
+          
             base.protectedinternal = 1;
         }
     }

@@ -1,0 +1,94 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model Person
+
+ <h1>Getpersondetails</h1>
+@using (Html.BeginForm("ShowDetails", "Person"))
+{
+    @Html.ValidationSummary()
+
+    @Html.EditorForModel()
+
+    <input type="submit" value="guardar" />
+}
+
+@*
+
+<h1>Get person details</h1>
+@using (Html.BeginForm("ShowDetails", "Person"))
+{
+    @Html.ValidationSummary()
+    @Html.LabelFor(p =>p.Name)
+    @Html.EditorFor(p =>p.Name)
+    @Html.ValidationMessageFor(p =>p.Name)
+    <br />
+    @Html.LabelFor(p =>p.Age)
+    @Html.EditorFor(p =>p.Age)
+    @Html.ValidationMessageFor(p =>p.Age)
+    <br />
+    @Html.LabelFor(p =>p.EmailAddress)
+    @Html.EditorFor(p =>p.EmailAddress)
+    @Html.ValidationMessageFor(p =>p.EmailAddress)
+    <br />
+    @Html.LabelFor(p =>p.Description)
+    @Html.EditorFor(p =>p.Description)
+    @Html.ValidationMessageFor(p =>p.Description)
+    <br />
+    <input type="submit" value="Submitmydetails" />
+} 
+
+
+<h1>Get person details</h1>
+<form asp-controller="Person" asp-action="ShowDetails">
+<div asp-validation-summary="All"></div>
+<label asp-for="Name"></label>
+<input asp-for="Name" />
+<span asp-validation-for="Name"></span>
+<br />
+<label asp-for="Age"></label>
+<input asp-for="Age" />
+<span asp-validation-for="Age"></span>
+<br />
+<label asp-for="EmailAddress"></label>
+<input asp-for="EmailAddress" />
+<span asp-validation-for="EmailAddress"></span>
+<br />
+<label asp-for="Description"></label>
+<input asp-for="Description" />
+<span asp-validation-for="Description"></span>
+<br />
+<input type="submit" value="Submit my details" />
+</form>
+ *@
+
+
+
+
+<h1>Persondetails</h1>
+@Html.DisplayNameFor(model =>model.Name)
+@Html.DisplayFor(model =>model.Name)
+<br />
+@Html.DisplayNameFor(model =>model.LastName)
+@Html.DisplayFor(model =>model.LastName)
+<br />
+@Html.DisplayNameFor(model =>model.ContactMe)
+@Html.DisplayFor(model =>model.ContactMe)
+
+<br />
+<h1>Get person details</h1>
+<label asp-for="Name"></label>
+<input asp-for="Name" />
+<br />
+<label asp-for="LastName"></label>
+<input asp-for="LastName" />
+<br />
+<label asp-for="ContactMe"></label>
+<input asp-for="ContactMe" />
+
+<br />
+<label asp-for="Description"></label>
+<textarea asp-for="Description" ></textarea>

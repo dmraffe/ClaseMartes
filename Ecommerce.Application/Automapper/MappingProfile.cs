@@ -14,6 +14,7 @@ namespace Ecommerce.Application.Automapper
 
         public MappingProfile() {
 
+            CreateMap<Category, CategoryDTO>();
             CreateMapperForProduc();
         
         }

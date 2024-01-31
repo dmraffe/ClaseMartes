@@ -18,4 +18,10 @@
     <ProjectReference Include="..\Ecommerce.Dominio\Ecommerce.Dominio.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Category\Commands\CreateCategory\" />
+    <Folder Include="Features\Category\Commands\DeleteCategory\" />
+    <Folder Include="Features\Category\Commands\UpdateCategory\" />
+  </ItemGroup>
+
 </Project>

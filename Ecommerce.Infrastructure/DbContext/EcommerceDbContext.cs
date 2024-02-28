@@ -12,7 +12,28 @@ namespace Ecommerce.Infrastructure
     {
         public EcommerceDbContext(DbContextOptions<EcommerceDbContext> options) : base(options) { 
         
-        } 
+        }
+
+
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+            foreach (var item in ChangeTracker.Entries<TableBase>())
+            {
+                switch (item.State)
+                {
+                    case EntityState.Added:
+                        item.Entity.CreatedDate = DateTime.Now;
+                        item.Entity.CreatedByName = "system";
+                        break;
+                    case EntityState.Modified:
+                        item.Entity.UpdateDate = DateTime.Now;
+                        item.Entity.UpdateByName = "system";
+                        break;
+                }
+
+            }
+            return base.SaveChangesAsync(cancellationToken);
+        }
 
 
         public DbSet<Category>Categories { get; set; }

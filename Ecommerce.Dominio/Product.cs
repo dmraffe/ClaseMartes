@@ -13,6 +13,9 @@ namespace Ecommerce.Dominio
 
         public int CategoryId { get; set; }
 
+        public int Cantidad { get; set; }
+        public decimal precio { get; set; }
+
         public virtual Category Category { get; set; }
 
     }

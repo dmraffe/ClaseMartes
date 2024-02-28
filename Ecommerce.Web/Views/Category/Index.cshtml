@@ -26,8 +26,21 @@
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new {  id=item.Id   }) |
-                    @Html.ActionLink("Details", "Details", new {  id=item.Id   }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.Id   }) |
                 @Html.ActionLink("Delete", "Delete", new {   id=item.Id   })
+
+                    @if (item.ProductCount > 0)
+                    {
+                         
+                          @Html.ActionLink("Crear Producto", "Create", "Product", new { id = item.Id })
+                    
+                    }else
+                    {
+                        @Html.ActionLink("Crear Producto", "Create","Product", new {   id=item.Id   })
+
+                    }
+
+
             </td>
         </tr>
 }

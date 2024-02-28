@@ -131,6 +131,9 @@ namespace Ecommerce.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("Cantidad")
+                        .HasColumnType("int");
+
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
@@ -154,6 +157,9 @@ namespace Ecommerce.Infrastructure.Migrations
 
                     b.Property<DateTime?>("UpdateDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<decimal>("precio")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 

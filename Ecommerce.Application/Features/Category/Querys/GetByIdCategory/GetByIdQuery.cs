@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Ecommerce.Application.Features.Category.Querys.GetByIdCategory
 {
-    public class GetByIdQuery : IRequest< CategoryDTO>
+    public class GetByIdQuery : IRequest<CategoryDTO>
     {
 
         public int Id { get; set; }

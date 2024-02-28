@@ -1,4 +1,8 @@
-﻿using Ecommerce.Application.Features.Category.Querys.GetAllCategory;
+﻿using Ecommerce.Application.Features.Category.Commands.CreateCategory;
+using Ecommerce.Application.Features.Category.Commands.CreateCategory;
+using Ecommerce.Application.Features.Category.Commands.DeleteCategory;
+using Ecommerce.Application.Features.Category.Commands.UpdateCategory;
+using Ecommerce.Application.Features.Category.Querys.GetAllCategory;
 using Ecommerce.Application.Features.Category.Querys.GetByIdCategory;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -41,14 +45,16 @@ namespace Ecommerce.Web.Controllers
         // POST: CategoryController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<ActionResult> Create(CreateCategoryCommand Q)
         {
             try
             {
+                var ret = await mediator.Send(Q);
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch(Exception ex)
             {
+                var e = ex;
                 return View();
             }
         }
@@ -63,10 +69,11 @@ namespace Ecommerce.Web.Controllers
         // POST: CategoryController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<ActionResult> Edit(int id, UpdateCategoryCommand q)
         {
             try
             {
+                var ret = await mediator.Send(q);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -85,10 +92,11 @@ namespace Ecommerce.Web.Controllers
         // POST: CategoryController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public async Task<ActionResult> Delete(int id, DeleteCategoryCommand q)
         {
             try
             {
+                var ret = await mediator.Send(q);
                 return RedirectToAction(nameof(Index));
             }
             catch
